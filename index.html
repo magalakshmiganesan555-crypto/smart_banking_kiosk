@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Smart Banking Kiosk</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand"><div class="robot">🤖</div><div><h1>SMART BANKING KIOSK</h1><p>AI Assisted Self Service Banking</p></div></div>
+    <div class="status" id="status">READY</div>
+  </header>
+
+  <main>
+    <section class="camera-card">
+      <video id="camera" autoplay muted playsinline></video>
+      <div class="camera-placeholder" id="cameraPlaceholder">📷<span>Camera Ready</span></div>
+      <div class="face-box" id="faceBox"></div>
+      <div class="camera-label" id="cameraLabel">Camera Ready</div>
+    </section>
+
+    <section class="assistant-card">
+      <div class="welcome" id="welcome">
+        <div class="big-robot">🤖</div>
+        <h2>வணக்கம்!</h2>
+        <p class="ta-title">நான் உங்கள் Smart Banking Assistant.</p>
+        <p class="en-title">How can I help you today?</p>
+        <p class="voice-line" id="voiceLine">தமிழில் பேசுகிறேன்...</p>
+      </div>
+
+      <div class="steps">
+        <div class="step active" id="s1"><b>1</b><span>Face</span></div><div class="line"></div>
+        <div class="step" id="s2"><b>2</b><span>Passbook</span></div><div class="line"></div>
+        <div class="step" id="s3"><b>3</b><span>Fingerprint</span></div><div class="line"></div>
+        <div class="step" id="s4"><b>4</b><span>Service</span></div>
+      </div>
+
+      <div class="message" id="message">ஒருமுறை START KIOSK அழுத்தவும்</div>
+
+      <div class="verification">
+        <div class="verify-row" id="passbookRow"><span>📘 Passbook</span><b id="passbookState">Waiting</b></div>
+        <div class="verify-row" id="fingerRow"><span>☝️ Fingerprint</span><b id="fingerState">Waiting</b></div>
+      </div>
+
+      <div class="service" id="serviceBox">
+        <div class="listen-pill" id="listenPill">🎙️ கேட்கிறேன்...</div>
+        <h2 id="serviceQuestion">Balance Enquiry அல்லது Cash Withdrawal?</h2>
+        <div class="heard" id="heard">உங்கள் பதிலை சொல்லுங்கள்</div>
+        <div class="service-grid" id="fallbackButtons">
+          <button id="balanceBtn">💳 Balance Enquiry</button>
+          <button id="withdrawBtn">💵 Cash Withdrawal</button>
+        </div>
+      </div>
+
+      <button class="start" id="startBtn">🎙️ START KIOSK</button>
+      <button class="finger" id="fingerBtn">☝️ VERIFY FINGERPRINT</button>
+      <button class="demo" id="demoBtn">DEMO VERIFY</button>
+      <button class="reset" id="resetBtn">RESET</button>
+    </section>
+  </main>
+  <footer>Smart Banking Kiosk • Demo Prototype</footer>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
